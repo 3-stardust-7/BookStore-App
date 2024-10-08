@@ -100,10 +100,10 @@ const Login = () => {
             {/* Button */}
             <div
               className="
-          flex
-          justify-around
-          mt-4
-          "
+             flex
+             justify-around
+             mt-4
+            "
             >
               <button
                 type="submit"

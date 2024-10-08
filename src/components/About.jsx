@@ -62,6 +62,7 @@ const About = () => {
         <Link to="/">
           <button
             className=" 
+            text-2xl
             border-[2px] 
             border-blue-300 
             text-blue-500 
