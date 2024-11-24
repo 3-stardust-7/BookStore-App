@@ -69,7 +69,7 @@ const About = () => {
             hover:bg-blue-300 
             hover:text-black 
             px-4 
-            rounded-2xl 
+            rounded-xl 
             mt-4
             dark:hover:bg-blue-300
             dark:text-white

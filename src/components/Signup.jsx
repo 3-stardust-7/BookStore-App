@@ -1,10 +1,10 @@
-import { useEffect } from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
 import { useForm } from "react-hook-form";
 
 const Signup = () => {
+  const [isOpen, setIsOpen] = useState(false); // Control dialog visibility
   const {
     register,
     handleSubmit,
@@ -50,7 +50,7 @@ const Signup = () => {
         min-w-[500px]
         min-h-[400px]"
         >
-          <form onSubmit={handleSubmit(onSubmit)} method="dialog">
+          <div onSubmit={handleSubmit(onSubmit)} method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <Link
               to="/"
@@ -121,7 +121,7 @@ const Signup = () => {
               <span>Password</span>
               <br />
               <input
-                type="text"
+                type="password"
                 placeholder="Enter your Password"
                 className="
             w-80
@@ -159,6 +159,7 @@ const Signup = () => {
             px-3 
             rounded-xl
             duration-200"
+                onClick={() => setSubmit(true)}
               >
                 Sign up
               </button>
@@ -166,10 +167,10 @@ const Signup = () => {
               <span>
                 <button
                   className="
-                underline 
-                text-blue-500 
-                dark:text-blue-300 
-                cursor-pointer"
+                  underline 
+                  text-blue-500 
+                  dark:text-blue-300 
+                  cursor-pointer"
                   onClick={() =>
                     document.getElementById("my_modal_3").showModal()
                   }
@@ -179,7 +180,7 @@ const Signup = () => {
                 <Login />
               </span>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -187,3 +188,35 @@ const Signup = () => {
 };
 
 export default Signup;
+
+/*
+useEffect(() => {
+    console.log(email);
+    console.log(password);
+    //setSubmit(false);
+  });
+
+<input
+                type="password"
+                placeholder="Enter your Password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  console.log(e.target.value);
+                }}
+
+const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [submit, setSubmit] = useState(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };*/
